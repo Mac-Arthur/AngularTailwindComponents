@@ -2,58 +2,72 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Tailwind Navbar Variants for Angular
 
-```bash
-ng serve
-```
+This project also includes a growing collection of **modern, responsive navbar layouts** built using **TailwindCSS**, **DaisyUI**, and **Angular**.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Each variant is mobile-first, fully styled, and easily reusable in any Angular app.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🔧 TailwindCSS + DaisyUI Setup
 
-```bash
-ng generate component component-name
-```
+Follow these steps to add Tailwind and DaisyUI to this Angular project.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+-----------------------------------------------------------------------------------
+### 1. Install Angular CLI (if needed)
+npm install -g @angular/cli@latest
+------------------------------------------------------------------------------------
 
-```bash
-ng generate --help
-```
+--------------------------------------------------------------------------
+2. Create a New Angular Project
+ng new my-project --style css
+cd my-project
+-------------------------------------------------------------------------------------
 
-## Building
+--------------------------------------------------------------------------------------------------
+3. Install Tailwind, DaisyUI & PostCSS
+npm install daisyui@latest tailwindcss@latest @tailwindcss/postcss@latest postcss@latest --force
+---------------------------------------------------------------------------------------------------
 
-To build the project run:
 
-```bash
-ng build
-```
+--------------------------------------------------------------------------------------------------
+4. Add Tailwind to PostCSS config
+Create a .postcssrc.json file in the root of the project:
+paste this:
+{
+  "plugins": {
+    "@tailwindcss/postcss": {}
+  }
+}
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---------------------------------------------------------------------------------------------------
+5. Configure styles.css
+Replace src/styles.css with:
 
-## Running unit tests
+@import "tailwindcss";
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+@plugin "daisyui" {
+  themes: all, light;
+}
 
-```bash
-ng test
-```
+---------------------------------------------------------------------------------------------------
+📁 Navbar Variants Included
+Variant	Description
+✅ Centered Rounded Navbar	Card-like layout, with margins and rounded corners
+✅ Sidebar Navbar (Mobile)	Mobile-first menu that slides in from the left
+✅ Bottom Nav (Mobile Style)	Fixed bottom navigation bar with icons
+✅ Transparent Scroll Nav	Starts transparent, turns solid on scroll
+✅ Avatar Dropdown Menu	Profile image with dropdown for account actions
 
-## Running end-to-end tests
+🎮 Component Usage in Angular
+Add the following variables in any component using the navbars:
+menuOpen = false;
+menuOpenV2 = false;
+sidebarOpen = false;
+sidebarOpenV2 = false;
 
-For end-to-end (e2e) testing, run:
+These booleans control visibility of dropdowns and sidebars via *ngIf or ngClass.
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
